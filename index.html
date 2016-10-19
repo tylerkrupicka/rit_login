@@ -18,20 +18,10 @@
       <script src="https://shibboleth.main.ad.rit.edu/js/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript">
-       $(document).ready(function(){
-          if($('#username').val()){
-             $('#password').focus();
-          } else {
-             $('#username').focus();
-          }
-       });
-    </script>
-
     <style>
-    .container {
-        max-width: 800px;
-    }
+        .container {
+            max-width: 800px;
+        }
     </style>
 
 
@@ -82,10 +72,6 @@
             <input class="form-control" id="password" name="password" type="password" value="" placeholder="Password">
             </div>
           </div>
-
-          <div id="nosso" class="form-group" style="display:none">
-            <input type="checkbox" name="donotcache" value="1"> If you are using a public computer select this to disable single sign on.          </div>
-
             <button class="btn btn-default" type="submit" name="_eventId_proceed"
                 onClick="this.childNodes[0].nodeValue='Logging in, please wait...'"
                 >Log in</button>
