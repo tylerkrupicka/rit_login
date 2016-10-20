@@ -57,11 +57,11 @@
         <p>Login to rit.brightspace.com</p>
 
         <div id="userInput">
-        <form action="/login" method="post" autocomplete="off" role="form" class="form-horizontal">
+        <form action="https://shibboleth.main.ad.rit.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s1" method="post" autocomplete="off" role="form" class="form-horizontal">
                   <div class="form-group">
             <label for="username" class="col-sm-2 control-label" name="username">RIT Username</label>
             <div class="col-sm-10">
-            <input class="form-control" id="username" name="username" type="text" autocorrect="off" autocapitalize="none"
+            <input class="form-control" id="username" name="j_username" type="text" autocorrect="off" autocapitalize="none"
                     value="" placeholder="RIT Username (Do not include @rit.edu)">
             </div>
           </div>
@@ -69,14 +69,18 @@
           <div class="form-group">
             <label for="password" class="col-sm-2 control-label">Password</label>
             <div class="col-sm-10">
-            <input class="form-control" id="password" name="password" type="password" value="" placeholder="Password">
+            <input class="form-control" id="password" name="j_password" type="password" value="" placeholder="Password">
             </div>
           </div>
+
+          <div id="nosso" class="form-group" style="display:none">
+            <input type="checkbox" name="donotcache" value="1"> If you are using a public computer select this to disable single sign on.          </div>
+
             <button class="btn btn-default" type="submit" name="_eventId_proceed"
                 onClick="this.childNodes[0].nodeValue='Logging in, please wait...'"
                 >Log in</button>
 
-                        </form>
+            </form>
             </div>
 
         <br>
