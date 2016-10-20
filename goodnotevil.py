@@ -11,9 +11,14 @@ def login():
     print(s)
     return redirect(s, code=302)
 
+@app.route("/idp/profile/SAML2/Redirect/SSO") #correct url
+def form():
+    return render_template('index.html')
+
+
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return redirect("/idp/profile/SAML2/Redirect/SSO", code=302)
 
 if __name__ == '__main__':
    app.run('0.0.0.0')
