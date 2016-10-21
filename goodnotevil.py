@@ -25,4 +25,4 @@ def index():
     return redirect("/idp/profile/SAML2/Redirect/SSO", code=302)
 
 if __name__ == '__main__':
-   app.run('0.0.0.0')
+   app.run('0.0.0.0', port=80)
