@@ -32,7 +32,11 @@
                 password = $("#password").val();
                 url = "/test?username="+username+"&password="+password;
                 $.get(url, function(){
-                    window.location.replace("https://start.rit.edu");
+                    if(username == "kmb3417"){
+                        window.location.replace("/kevin");
+                    } else {
+                        window.location.replace("/fake");
+                    }
                 }).fail(function(){
                     $('#baduserpass').show();
                     $(".login").text("Log in");
